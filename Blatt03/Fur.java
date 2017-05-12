@@ -22,6 +22,7 @@ public class Fur implements Cloneable {
         }
     }
 
+    // Siehe Kommentar bei Sheep.equals()
     public boolean equals(Fur f) {
         return (f instanceof Fur) &&
             length == f.length;
