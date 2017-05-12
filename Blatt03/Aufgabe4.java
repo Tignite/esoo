@@ -1,5 +1,6 @@
 // Siehe 8.8.10 Preventing Instantiation of a Class,
 // The Java Language Specification
+// https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.8.10
 
 class Singleton {
     private static Singleton onlyInstance = null;
