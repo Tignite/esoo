@@ -1,4 +1,4 @@
-public class Lasagne implements Food {
+class Lasagne implements Food {
 
     private char size;
     private String topping;
