@@ -40,6 +40,10 @@ class Aufgabe3 {
                                            // ist nur für die
                                            // Unterklasse C2 definiert
 
-        C1 c = new C1(); ((C2) c).f1();    // Laufzeitfehler, da C2 keine Unterklasse von C1
+        C1 c = new C1(); ((C2) c).f1();    // Laufzeitfehler, da c
+                                           // Instanz der Klasse C1
+                                           // und ein Cast auf C2
+                                           // (eine Unterklasse von
+                                           // C1) nicht möglich ist
     }
 }
