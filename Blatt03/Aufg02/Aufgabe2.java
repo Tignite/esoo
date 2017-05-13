@@ -1,25 +1,3 @@
-interface Food {
-    public String getMeal();
-}
-
-class Cauliflower implements Food {
-    public String getMeal() {
-        return "Blumenkohl an Gorgonzolasoße";
-    }
-}
-
-class Spaghetti implements Food {
-    public String getMeal() {
-        return "Spaghetti Bologneser Art";
-    }
-}
-
-class Mushroom implements Food {
-    public String getMeal() {
-        return "Pilzrahmsoße";
-    }
-}
-
 class Aufgabe2
 {
     public static void main(String[] args) {
@@ -28,7 +6,11 @@ class Aufgabe2
         System.out.println(food.getMeal());
         food = new Spaghetti();
         System.out.println(food.getMeal());
-        food = new Mushroom();
+        // Aufgabe 2b Stichwort: Dynamic Binding, Nachricht an Objekt
+        // hat verschiedene Effekte je nach Empfängertyp
+
+        // Aufgabe 2c
+        food = new Lasagne("Veggies", 'M');
         System.out.println(food.getMeal());
     }
 }
