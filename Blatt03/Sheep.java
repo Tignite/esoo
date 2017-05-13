@@ -37,25 +37,27 @@ public class Sheep implements Cloneable {
 
         // WICHTIG: s.name = String (this.name), also das Kopieren des
         // Namens ist nicht erforderlich, da Strings unveränderlich
-        // sind. Wird später eines der Schaafe umbenannt, so wird ja
-        // nicht die String Instanz die .name referenziert verändert,
-        // sondern dem Feld .name wird die Adresse des Strings, der
-        // den neuen Namen enthält, zugewiesen. Die ursprüngliche
-        // String Instanz (im anderen Schaaf verwendet) bleibt
-        // hingegen unverändert. Damit ist beim Clonen kein Kopieren
-        // von Feldern des Typs String nötig.
-
+        // sind.
         //s.name = String(this.name);
 
         return s;
+    }
+
+    // Alternative ohne Beutzung des Clonable Interfaces:
+    public Sheep shallowCopy() {
+        return new Sheep (name, fur);
+    }
+
+    public Sheep deepCopy() {
+        return new Sheep(name, new Fur(this.fur.length));
     }
 
     // Vergleicht zwei Schaafe rekursiv anhand der Werte ihrer
     // Instanzfelder und nicht anhand der Gleicheit von Referenzen
     // http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-
 
-    // Hier könnte(sollte?) wohl eigentlich der Typ Object als
-    // Argument stehen (was soll sonst der test 's instanceof Sheep'?!)
+    // Hier könnte (sollte?) wohl eigentlich der Typ Object als
+    // Argument stehen (was soll sonst der test 's instanceof Sheep'?)
     // aber dan gibt es Warnungen wegen nicht implemnetierter Hash
     // Funktion...
     public boolean equals (Sheep s) {
