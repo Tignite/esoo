@@ -1,7 +1,7 @@
 class Matrix2D {
     // Standardmäßig werden alle Elemente im Array auf ihren
     // Standardwert (hier also 0d) gesetzt
-    private double[][] values = new double[2][2];
+    double[][] values = new double[2][2];
 
     // Legt die Formatierung der Array Einträge in der toString()
     // Methode fest.
@@ -33,8 +33,12 @@ class Matrix2D {
 
     public String toString() {
         return String.format("[ " + formatString + " " + formatString + "]\n" +
-                             "[ " + formatString + " " + formatString + "]\n",
+                             "[ " + formatString + " " + formatString + "]",
                              values[0][0], values[0][1],
                              values[1][0], values[1][1]);
+    }
+
+    public Object applyOperator(Operator o) {
+        return o.execute(this);
     }
 }
