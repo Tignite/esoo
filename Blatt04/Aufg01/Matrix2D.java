@@ -5,7 +5,7 @@ class Matrix2D {
 
     // Legt die Formatierung der Array Einträge in der toString()
     // Methode fest.
-    private final String formatString = "%04.2f";
+    private final String formatString = "%6.2f";
 
     // Gibt eine 0-Matrix zurück
     public Matrix2D() {
