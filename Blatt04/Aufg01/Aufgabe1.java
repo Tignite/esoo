@@ -23,9 +23,11 @@ class Aufgabe1 {
 
             for(Operator o : alloperators) {
                 System.out.println("Ergebnis " + o.getClass().toString());
-                System.out.println(m.applyOperator(o).getClass().toString());
-                System.out.println(m.applyOperator(o).toString());
+                System.out.println(m.applyOperator(o).getClass().toString() + ":");
+                System.out.println(m.applyOperator(o));
             }
+
+	    System.out.println();
         }
     }
 }
