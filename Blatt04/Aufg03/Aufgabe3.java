@@ -6,11 +6,16 @@ class Aufgabe3
 
         Cauliflower essen1 = new Cauliflower();
         student.eat(essen1); // I don't like Blumenkohl an Gorgonzolasoße
-	// Statischer Typ und dynamischer Typ von essen1 sind hier gleich!
+	// Statischer Typ und dynamischer Typ von essen1 sind hier
+	// gleich. Es wird die spezifischste Methode mit Signatur
+	// (Cauliflower) benutzt.
 
         Spaghetti essen2 = new Spaghetti();
         student.eat(essen2); // I like Spaghetti Bologneser Art
-	// Statischer Typ und dynamischer Typ von essen2 sind hier gleich!
+	// Statischer Typ und dynamischer Typ von essen2 sind hier
+	// gleich.  Es wird die spezifischste .eat() Methode
+	// aufgerufen; diese hat die Signatur (Food), da keine
+	// spezifischere Signatur (Spaghetti) existiert.
 
         Food essen = new Cauliflower();
         student.eat(essen); // I like Blumenkohl an Gorgonzolasoße
