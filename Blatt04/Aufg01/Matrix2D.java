@@ -15,7 +15,6 @@ class Matrix2D {
     // Gibt die Einheitmatrix multipliziert mit einem doulbe Skalar
     // zurück. new Matrix2D(1) gibt also die Einheitsmatrix zurück
     public Matrix2D(double scalar) {
-        this();
         values[0][0] = scalar;
         values[1][1] = scalar;
     }
