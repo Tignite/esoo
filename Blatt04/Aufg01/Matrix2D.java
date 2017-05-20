@@ -5,7 +5,7 @@ class Matrix2D {
 
     // Legt die Formatierung der Array Einträge in der toString()
     // Methode fest.
-    private final String formatString = "%6.2f";
+    private final String FORMAT_STRING = "%6.2f";
 
     // Gibt eine 0-Matrix zurück
     public Matrix2D() {
@@ -19,10 +19,11 @@ class Matrix2D {
         values[0][0] = scalar;
         values[1][1] = scalar;
     }
+
     // Gibt eine Matrix zurück, initialisiert mit den Werten a00, a01,
     // a10, a11
     public Matrix2D(double a00, double a01,
-                     double a10, double a11) {
+		    double a10, double a11) {
         values[0][0] = a00; values[0][1] = a01;
         values[1][0] = a10; values[1][1] = a11;
 
@@ -32,8 +33,8 @@ class Matrix2D {
     }
 
     public String toString() {
-        return String.format("[ " + formatString + " " + formatString + "]\n" +
-                             "[ " + formatString + " " + formatString + "]",
+        return String.format("[ " + FORMAT_STRING + " " + FORMAT_STRING + "]\n" +
+                             "[ " + FORMAT_STRING + " " + FORMAT_STRING + "]",
                              values[0][0], values[0][1],
                              values[1][0], values[1][1]);
     }
