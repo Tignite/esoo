@@ -31,8 +31,8 @@ class Testklasse
 
     // Aufgabe 4 b
     static boolean testXor() {
-	Component in1 =  new PassGate(); // A
-	Component in2 =  new PassGate(); // B
+	Component inA =  new PassGate(); // A
+	Component inB =  new PassGate(); // B
 
 	Component xor = new XorGate();
 
@@ -48,18 +48,18 @@ class Testklasse
 	///////////////////////////////////////////
 
 	// not1 = NOT B
-	in2.connectTo(not1);
+	inB.connectTo(not1);
 
 	// and1 = (NOT B) OR A
 	not1.connectTo(and1);
-	in1.connectTo(and1);
+	inA.connectTo(and1);
 
 	// not2 = NOT A
-	in1.connectTo(not2);
+	inA.connectTo(not2);
 
 	// and2 = (NOT A) OR B
 	not2.connectTo(and2);
-	in2.connectTo(and2);
+	inB.connectTo(and2);
 
 	// or = (A AND (NOT B)) OR ((NOT B) AND B)
 	and1.connectTo(or);
@@ -69,8 +69,8 @@ class Testklasse
 	// XOR Gate selbst, zum Vergleich        //
 	///////////////////////////////////////////
 
-	in1.connectTo(xor);
-	in2.connectTo(xor);
+	inA.connectTo(xor);
+	inB.connectTo(xor);
 
 	/////////////
 	// Circuit //
@@ -88,8 +88,8 @@ class Testklasse
 	boolean[] bools = {false, true};
 	for (boolean a : bools) {
 	    for (boolean b : bools) {
-		in1.state = a;
-		in2.state = b;
+		inA.state = a;
+		inB.state = b;
 		// Schaltunk aktualisieren
 		ArrayList<Boolean> results = testCircuit.simulate();
 		System.out.printf("A=%b, B=%b :", a, b);
@@ -106,21 +106,21 @@ class Testklasse
     {
 	testXor();
 	// // Benötigte Komponenten instanzieren
-	// Component in1 = new PassGate(); // A
-	// Component in2 = new PassGate(); // B
+	// Component inA = new PassGate(); // A
+	// Component inB = new PassGate(); // B
 	// Component n1 = new NotGate();
 	// Component a1 = new AndGate();
 
 	// // Bauteile vernetzen
-	// in1.connectTo(a1); // A direkt mit AND verbinden
-	// in2.connectTo(n1); // B zunächst mit NOT verbinden
+	// inA.connectTo(a1); // A direkt mit AND verbinden
+	// inB.connectTo(n1); // B zunächst mit NOT verbinden
 	// n1.connectTo(a1); // NOT mit AND verbinden
 
 	// // Circuit-Klasse instanzieren und Ausgang von AND registrieren
 	// Circuit c1 = new Circuit();
 	// c1.exitgates.add(a1);
-	// in1.state = true; // Eingang A festlegen
-	// in2.state = false; // Eingang B festlegen
+	// inA.state = true; // Eingang A festlegen
+	// inB.state = false; // Eingang B festlegen
 	// // Schaltung simulieren und Wert des ersten und einzigen Ausgang ausgeben
 
 	// System.out.println(c1.simulate().get(0));
