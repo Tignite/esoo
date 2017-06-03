@@ -6,6 +6,8 @@ public class Catalogue {
     private HashSet<Product> set = new HashSet<Product>();
 
     public void printMe() {
+        System.out.println("Catalogue:");
+
         for (Product p : set) {
             System.out.printf("%s, Preis inkl. MWST: %.2f\n", p, p.getPriceWithTax());
         }
