@@ -6,6 +6,8 @@ class Testklasse
     public static void main(String args[])
     // throws InterruptedException wegen Thread.sleep(1000) untem im Code
         throws InterruptedException {
+        boolean allTestsPassed = true;
+
         TestCase[] testCases =
             {new TestCase(new AndGate(), new boolean[] {false, false, false, true}),
              new TestCase(new OrGate(), new boolean[] {false, true, true, true}),
@@ -14,7 +16,6 @@ class Testklasse
              new TestCase(new NandGate(), new boolean[] {true, true, true, false}),
              new TestCase(new NorGate(), new boolean[] {true, false, false, false})};
 
-        boolean allTestsPassed = true;
         for (TestCase tc: testCases) {
             if (!tc.runTest()) {
                 allTestsPassed = false;
@@ -24,6 +25,7 @@ class Testklasse
         // Teste TimeGate Das kann man hier natürlich nicht korrekt
         // testen, weil ES NICHT SICHER MÖGLICH IST DEN IDENTISCHEN
         // ZEITPUNKT zu erwischen wie der, den das TimeGate selber benutzt!
+        // Es kann also (selten) passieren, dass der Test nicht positiv verläuft!
         Component timeGate = new TimeGate();
         boolean evenSec = ((new Date()).getTime() / 1000) % 2 == 0 ? true : false;
         TestCase timeGateTC = new TestCase(timeGate,
