@@ -64,7 +64,8 @@ class Aufgabe4b {
                 inB.state = b;
                 // Schaltunk aktualisieren
                 ArrayList<Boolean> results = testCircuit.simulate();
-                System.out.printf("A=%b, B=%b :", a, b);
+                boolean valuesMatch = results.get(0) ==  results.get(1);
+                System.out.printf("A=%d, B=%d, Results: ", a ? 1 : 1, b ? 1 : 0);
                 System.out.println(testCircuit.simulate() + " "
                                    + (results.get(0) == results.get(1) ?
                                       "PASSED" : "FAILED"));
@@ -73,6 +74,8 @@ class Aufgabe4b {
     }
 
     public static void main(String[] args) {
+        System.out.println("Aufgabe 4b");
+
         testXor();
     }
 }
