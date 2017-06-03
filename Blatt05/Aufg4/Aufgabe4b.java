@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 
 class Aufgabe4b {
-    static void testXor() {
+    static boolean testXor() {
         Component inA =  new PassGate(); // A
         Component inB =  new PassGate(); // B
 
@@ -55,8 +55,7 @@ class Aufgabe4b {
         ////////////////
         // Vergleiche //
         ////////////////
-        boolean testPassed = false;
-
+        boolean testPassed = true;
         boolean[] bools = {false, true};
         for (boolean a : bools) {
             for (boolean b : bools) {
@@ -67,15 +66,21 @@ class Aufgabe4b {
                 boolean valuesMatch = results.get(0) ==  results.get(1);
                 System.out.printf("A=%d, B=%d, Results: ", a ? 1 : 1, b ? 1 : 0);
                 System.out.println(testCircuit.simulate() + " "
-                                   + (results.get(0) == results.get(1) ?
-                                      "PASSED" : "FAILED"));
+                                   + (valuesMatch ? "PASSED" : "FAILED"));
+                if (!valuesMatch) {
+                    testPassed = false;
+                }
             }
         }
+
+        return testPassed;
     }
 
     public static void main(String[] args) {
         System.out.println("Aufgabe 4b");
 
-        testXor();
+        boolean testPassed = testXor();
+        System.out.println(testPassed ? "Test PASSED" : "Test FAILD");
+        System.exit(testPassed ? 0 : 1);
     }
 }
