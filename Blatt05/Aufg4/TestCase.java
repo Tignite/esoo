@@ -1,7 +1,7 @@
 // TestCase Klasse zum Testen eines Gates. Der Constructor erhält als
-// Argumente ein Gate und ein boolean[] Array mit den erwarteten
-// Werten am Ausgang des Gates für die Eingangsbelegungen von zwei
-// Eingängen A und B mit
+// Argumente ein Gate 'gate' und ein boolean[] Array 'expectedResults'
+// mit den erwarteten Werten am Ausgang des Gates für die
+// Eingangsbelegungen von zwei Eingängen A und B mit
 //
 // A | B  | erwarteter Wert in
 // ----------------------------
