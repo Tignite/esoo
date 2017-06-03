@@ -43,12 +43,17 @@ public class Main {
  * 4
  * 8
  *
- * 4 --> da die Methode in Klasse Lastwagen nicht überschrieben wird,
- * wird die vererbte Methode der Klasse Auto ausgeführt.
+ * 4 --> da die Methode in Klasse Lastwagen jetzt nicht mehr
+ * überschrieben wird, wird die vererbte Methode der Klasse Auto
+ * ausgeführt.
  *
- * 4 --> das Casten des statishen Typs ändert nichts an der Ausführung und Ausgabe der Methode.
+ * 4 --> das Casten des statischen Typs ändert nichts an der
+ * Ausführung und Ausgabe der Methode; der dynamische Typ ist auch
+ * hier Lastwagen, und es wird die vererbte getReifen() Methode der
+ * Klasse Auto ausgeführt.
  */
 
-/*Teil c.)
- * Fehlermeldung...
+/*Teil c.)  Es kommt zur einem Compilerfehler in der Zeile von Ausgabe
+ * 3, da die Methode getReifen() jetzt nur noch in der Klasse
+ * Lastwagen definiert ist, in der Klasse Auto aber noch nicht.
  */
