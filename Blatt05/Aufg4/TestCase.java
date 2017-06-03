@@ -45,9 +45,9 @@ class TestCase {
                     testPassed = false;
                 }
 
-                System.out.print("inA=" + (a ? 1 : 0) + ", inB=" + (b ? 1 : 0) + ":");
-                System.out.println("Result: " + results.get(0) + ", Expected: " +
-                                   expectedResults[resultsIdx] + (valuesMatch ? " OK" : " FAIL"));
+                System.out.print("inA=" + (a ? 1 : 0) + ", inB=" + (b ? 1 : 0) + ": " +
+                                 "Result: " + results.get(0) + ", Expected: " +
+                                 expectedResults[resultsIdx] + (valuesMatch ? " OK" : " FAIL") + "\n");
                 resultsIdx++;
             }
         }
