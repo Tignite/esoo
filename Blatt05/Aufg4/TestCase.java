@@ -52,7 +52,7 @@ class TestCase {
             }
         }
 
-        System.out.println("Test " + gate.getClass() + (testPassed ? " PASSED" : " FAILD"));
+        System.out.println("Test " + gate.getClass() + (testPassed ? " PASSED\n" : " FAILD\n"));
 
         return testPassed;
     }
