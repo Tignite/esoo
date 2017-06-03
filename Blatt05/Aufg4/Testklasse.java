@@ -8,13 +8,14 @@ class Testklasse
         throws InterruptedException {
         boolean allTestsPassed = true;
 
-        TestCase[] testCases =
-            {new TestCase(new AndGate(), new boolean[] {false, false, false, true}),
-             new TestCase(new OrGate(), new boolean[] {false, true, true, true}),
-             new TestCase(new NotGate(), new boolean[] {true, true, false, false}),
-             new TestCase(new XorGate(), new boolean[] {false, true, true, false}),
-             new TestCase(new NandGate(), new boolean[] {true, true, true, false}),
-             new TestCase(new NorGate(), new boolean[] {true, false, false, false})};
+        TestCase[] testCases = {
+            new TestCase(new AndGate(), new boolean[] {false, false, false, true}),
+            new TestCase(new OrGate(), new boolean[] {false, true, true, true}),
+            new TestCase(new NotGate(), new boolean[] {true, true, false, false}),
+            new TestCase(new XorGate(), new boolean[] {false, true, true, false}),
+            new TestCase(new NandGate(), new boolean[] {true, true, true, false}),
+            new TestCase(new NorGate(), new boolean[] {true, false, false, false})
+        };
 
         for (TestCase tc: testCases) {
             if (!tc.runTest()) {
