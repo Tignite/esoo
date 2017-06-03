@@ -6,14 +6,9 @@ public class Catalogue {
     private HashSet<Product> set = new HashSet<Product>();
 
     public void printMe() {
-        Iterator iterator = set.iterator();
-        String output = "Catalogue: \n";
-
-        while(iterator.hasNext()){
-            output += iterator.next().toString() + "\n";
+        for (Product p : set){
+            System.out.println(p);
         }
-
-        System.out.print(output);
     }
 
     public void add(Product p){

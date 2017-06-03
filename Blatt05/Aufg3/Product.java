@@ -11,7 +11,7 @@ public class Product {
         this.price = price;
     }
 
-    protected final double getPriceWithTax() {
+    final double getPriceWithTax() {
         return price * 1.19;
     }
 
