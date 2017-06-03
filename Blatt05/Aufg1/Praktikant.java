@@ -5,6 +5,10 @@ public class Praktikant extends Angestellter {
         super(vorname, nachname, alter, 400); //calls constructor of superclass (Angestellter)
     }
 
+    public Praktikant(String vorname, String nachname, int  alter){
+        super(vorname, nachname, alter, 400); //calls constructor of superclass (Angestellter)
+    }
+
     public void increaseSalary(int bonus){
         System.out.println("ERROR: Intern Salaries can not exceed 400$ limit!");
     }
